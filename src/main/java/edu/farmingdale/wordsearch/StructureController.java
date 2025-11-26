@@ -2,6 +2,7 @@ package edu.farmingdale.wordsearch;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -27,13 +28,20 @@ public class StructureController {
     @FXML
     private Button wordButton;
     String input;
-    ArrayList<String> strList = new ArrayList<>();
+    String searchKey;
+    ArrayList<String> inputX = new ArrayList<>();
 
     public void uplink(ActionEvent actionEvent) {
         input = inputBodyField.getText();
-        System.out.println("success!");
+        splice(input);
     }
 
     public void catchWord(ActionEvent actionEvent) {
+        searchKey = wordField.getText();
+
+    }
+
+    public void splice(String input) {
+        String[] interim = input.split(" ");
     }
 }
