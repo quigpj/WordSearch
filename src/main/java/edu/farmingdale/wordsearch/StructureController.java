@@ -3,7 +3,9 @@ package edu.farmingdale.wordsearch;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
-import java.util.regex.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 /**
  * FXML Controller class
@@ -29,7 +31,7 @@ public class StructureController {
 
         Pattern pattern = Pattern.compile("\\b" + searchKey + "\\b", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(input);
-
+        
         while (matcher.find())
             count++;
 
