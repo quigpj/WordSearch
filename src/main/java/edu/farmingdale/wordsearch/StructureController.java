@@ -1,13 +1,9 @@
 package edu.farmingdale.wordsearch;
 
-import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
-
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Button;
+
+import java.util.regex.*;
 
 /**
  * FXML Controller class
@@ -21,27 +17,26 @@ public class StructureController {
     private TextField wordField;
     @FXML
     private TextField wordCountField;
-    @FXML
-    private TextField outputBodyField;
-    @FXML
-    private Button bodyButton;
-    @FXML
-    private Button wordButton;
     String input;
     String searchKey;
-    ArrayList<String> inputX = new ArrayList<>();
 
-    public void uplink(ActionEvent actionEvent) {
+    public void uplink() {
         input = inputBodyField.getText();
-        splice(input);
     }
-
-    public void catchWord(ActionEvent actionEvent) {
+    
+    public void catchWord() {
         searchKey = wordField.getText();
 
-    }
+        int count = 0;
 
-    public void splice(String input) {
-        String[] interim = input.split(" ");
+        Pattern pattern = Pattern.compile("\\b" + searchKey + "\\b", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(input);
+
+        while (matcher.find()) {
+            count++;
+
+        }
+
+        wordCountField.setText(Integer.toString(count));
     }
 }
