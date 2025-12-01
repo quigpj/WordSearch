@@ -17,25 +17,21 @@ public class StructureController {
     private TextField wordField;
     @FXML
     private TextField wordCountField;
-    String input;
-    String searchKey;
+    private String input;
 
     public void uplink() {
         input = inputBodyField.getText();
     }
-    
-    public void catchWord() {
-        searchKey = wordField.getText();
 
+    public void catchWord() {
+        String searchKey = wordField.getText();
         int count = 0;
 
         Pattern pattern = Pattern.compile("\\b" + searchKey + "\\b", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(input);
 
-        while (matcher.find()) {
+        while (matcher.find())
             count++;
-
-        }
 
         wordCountField.setText(Integer.toString(count));
     }
