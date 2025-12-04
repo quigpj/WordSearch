@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="618.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.farmingdale.wordsearch.StructureController">
+<AnchorPane id="AnchorPane" prefHeight="618.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.farmingdale.wordsearch.StructureController">
    <children>
       <Label layoutX="181.0" layoutY="14.0" text="WordSearch" textFill="#1c82ae" underline="true">
          <font>
@@ -24,7 +24,6 @@
       <Button fx:id="bodyButton" layoutX="274.0" layoutY="231.0" mnemonicParsing="false" onAction="#uplink" text="Submit" />
       <TextField fx:id="wordField" layoutX="164.0" layoutY="277.0" promptText="Insert word to be searched for!" />
       <Button fx:id="wordButton" layoutX="314.0" layoutY="277.0" mnemonicParsing="false" onAction="#catchWord" text="Submit" />
-      <TextField fx:id="outputBodyField" editable="false" layoutX="165.0" layoutY="337.0" prefHeight="131.0" prefWidth="271.0" />
       <Label layoutX="140.0" layoutY="515.0" text="Word Count:" />
       <TextField fx:id="wordCountField" editable="false" layoutX="217.0" layoutY="511.0" />
    </children>
