@@ -5,6 +5,8 @@ import javafx.scene.control.TextField;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 
 /**
@@ -30,7 +32,14 @@ public class StructureController {
         int count = 0;
 
         Pattern pattern = Pattern.compile("\\b" + searchKey + "\\b", Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher(input);
+        Matcher matcher = pattern.matcher("");
+        
+        try {
+            matcher = pattern.matcher(input);
+        } catch (NullPointerException nullPointerException) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.show();
+        }
         
         while (matcher.find())
             count++;
