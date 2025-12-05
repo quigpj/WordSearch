@@ -37,7 +37,7 @@ public class StructureController {
         try {
             matcher = pattern.matcher(input);
         } catch (NullPointerException nullPointerException) {
-            Alert alert = new Alert(AlertType.ERROR);
+            Alert alert = new Alert(AlertType.ERROR, "No text to search.");
             alert.show();
         }
         
